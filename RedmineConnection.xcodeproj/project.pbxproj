@@ -95,6 +95,7 @@
 		96DE4865167B7B0A0054A10E /* Tracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tracker.m; sourceTree = "<group>"; };
 		96DE4866167B7B0A0054A10E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		96DE4867167B7B0A0054A10E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		96DE4874167B7DF60054A10E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +146,7 @@
 		96A1898F1674EDFB00CC0396 /* RedmineConnection */ = {
 			isa = PBXGroup;
 			children = (
+				96DE4874167B7DF60054A10E /* README.md */,
 				96DE4858167B7B0A0054A10E /* Resources */,
 				96DE484A167B72180054A10E /* AutoMagicCoding */,
 				96A189AC1674EE5900CC0396 /* AFNetworking */,
