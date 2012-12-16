@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Settings : NSObject
+@interface RCSettings : NSObject
 
 @property(nonatomic, strong) NSString *apiKey;
 
@@ -16,6 +16,6 @@
 
 @property(nonatomic, strong) NSString *format;
 
-+ (Settings*)sharedInstance;
++ (RCSettings*)sharedInstance;
 
 @end

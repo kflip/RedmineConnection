@@ -1,5 +1,5 @@
 //
-//  IssueStatus.h
+//  Tracker.h
 //  RedmineConnection
 //
 //  Created by Sebastian Kruschwitz on 14.12.12.
@@ -8,11 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface IssueStatus : NSObject
+@interface RCTracker : NSObject
 
-@property(nonatomic, strong) NSNumber *statusID;
+@property(nonatomic) NSUInteger trackerID;
 @property(nonatomic, strong) NSString *name;
-@property(nonatomic, strong) NSNumber *isDefault;
-@property(nonatomic, strong) NSNumber *isClosed;
 
 @end

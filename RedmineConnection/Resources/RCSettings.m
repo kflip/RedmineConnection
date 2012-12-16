@@ -6,23 +6,23 @@
 //  Copyright (c) 2012 Sebastian Kruschwitz. All rights reserved.
 //
 
-#import "Settings.h"
+#import "RCSettings.h"
 
-@interface Settings ()
+@interface RCSettings ()
 
 
 
 @end
 
 
-@implementation Settings
+@implementation RCSettings
 
-+ (Settings*)sharedInstance
++ (RCSettings*)sharedInstance
 {
-    static Settings *sharedInstance = nil;
+    static RCSettings *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[Settings alloc] init];
+        sharedInstance = [[RCSettings alloc] init];
         
         [sharedInstance initPlist];
     });

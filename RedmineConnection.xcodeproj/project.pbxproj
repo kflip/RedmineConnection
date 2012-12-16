@@ -30,14 +30,14 @@
 		96A189CA1674EE7500CC0396 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A189C91674EE7500CC0396 /* SystemConfiguration.framework */; };
 		96A189CC1674EEA500CC0396 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A189CB1674EEA500CC0396 /* MobileCoreServices.framework */; };
 		96DE484D167B72190054A10E /* NSObject+AutoMagicCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE484C167B72190054A10E /* NSObject+AutoMagicCoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		96DE4868167B7B0A0054A10E /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE485A167B7B0A0054A10E /* Issue.m */; };
-		96DE4869167B7B0A0054A10E /* IssueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE485C167B7B0A0054A10E /* IssueCategory.m */; };
-		96DE486A167B7B0A0054A10E /* IssueStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE485E167B7B0A0054A10E /* IssueStatus.m */; };
-		96DE486B167B7B0A0054A10E /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE4860167B7B0A0054A10E /* Project.m */; };
-		96DE486C167B7B0A0054A10E /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE4862167B7B0A0054A10E /* Settings.m */; };
+		96DE4868167B7B0A0054A10E /* RCIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE485A167B7B0A0054A10E /* RCIssue.m */; };
+		96DE4869167B7B0A0054A10E /* RCIssueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE485C167B7B0A0054A10E /* RCIssueCategory.m */; };
+		96DE486A167B7B0A0054A10E /* RCIssueStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE485E167B7B0A0054A10E /* RCIssueStatus.m */; };
+		96DE486B167B7B0A0054A10E /* RCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE4860167B7B0A0054A10E /* RCProject.m */; };
+		96DE486C167B7B0A0054A10E /* RCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE4862167B7B0A0054A10E /* RCSettings.m */; };
 		96DE486D167B7B0A0054A10E /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96DE4863167B7B0A0054A10E /* Settings.plist */; };
-		96DE486E167B7B0A0054A10E /* Tracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE4865167B7B0A0054A10E /* Tracker.m */; };
-		96DE486F167B7B0A0054A10E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE4867167B7B0A0054A10E /* User.m */; };
+		96DE486E167B7B0A0054A10E /* RCTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE4865167B7B0A0054A10E /* RCTracker.m */; };
+		96DE486F167B7B0A0054A10E /* RCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE4867167B7B0A0054A10E /* RCUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,21 +80,21 @@
 		96A189CB1674EEA500CC0396 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		96DE484B167B72190054A10E /* NSObject+AutoMagicCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AutoMagicCoding.h"; sourceTree = "<group>"; };
 		96DE484C167B72190054A10E /* NSObject+AutoMagicCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AutoMagicCoding.m"; sourceTree = "<group>"; };
-		96DE4859167B7B0A0054A10E /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
-		96DE485A167B7B0A0054A10E /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
-		96DE485B167B7B0A0054A10E /* IssueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueCategory.h; sourceTree = "<group>"; };
-		96DE485C167B7B0A0054A10E /* IssueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueCategory.m; sourceTree = "<group>"; };
-		96DE485D167B7B0A0054A10E /* IssueStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueStatus.h; sourceTree = "<group>"; };
-		96DE485E167B7B0A0054A10E /* IssueStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueStatus.m; sourceTree = "<group>"; };
-		96DE485F167B7B0A0054A10E /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
-		96DE4860167B7B0A0054A10E /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
-		96DE4861167B7B0A0054A10E /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
-		96DE4862167B7B0A0054A10E /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		96DE4859167B7B0A0054A10E /* RCIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCIssue.h; sourceTree = "<group>"; };
+		96DE485A167B7B0A0054A10E /* RCIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCIssue.m; sourceTree = "<group>"; };
+		96DE485B167B7B0A0054A10E /* RCIssueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCIssueCategory.h; sourceTree = "<group>"; };
+		96DE485C167B7B0A0054A10E /* RCIssueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCIssueCategory.m; sourceTree = "<group>"; };
+		96DE485D167B7B0A0054A10E /* RCIssueStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCIssueStatus.h; sourceTree = "<group>"; };
+		96DE485E167B7B0A0054A10E /* RCIssueStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCIssueStatus.m; sourceTree = "<group>"; };
+		96DE485F167B7B0A0054A10E /* RCProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProject.h; sourceTree = "<group>"; };
+		96DE4860167B7B0A0054A10E /* RCProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProject.m; sourceTree = "<group>"; };
+		96DE4861167B7B0A0054A10E /* RCSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSettings.h; sourceTree = "<group>"; };
+		96DE4862167B7B0A0054A10E /* RCSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSettings.m; sourceTree = "<group>"; };
 		96DE4863167B7B0A0054A10E /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
-		96DE4864167B7B0A0054A10E /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
-		96DE4865167B7B0A0054A10E /* Tracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tracker.m; sourceTree = "<group>"; };
-		96DE4866167B7B0A0054A10E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		96DE4867167B7B0A0054A10E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		96DE4864167B7B0A0054A10E /* RCTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTracker.h; sourceTree = "<group>"; };
+		96DE4865167B7B0A0054A10E /* RCTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTracker.m; sourceTree = "<group>"; };
+		96DE4866167B7B0A0054A10E /* RCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCUser.h; sourceTree = "<group>"; };
+		96DE4867167B7B0A0054A10E /* RCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCUser.m; sourceTree = "<group>"; };
 		96DE4874167B7DF60054A10E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -212,21 +212,21 @@
 		96DE4858167B7B0A0054A10E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				96DE4859167B7B0A0054A10E /* Issue.h */,
-				96DE485A167B7B0A0054A10E /* Issue.m */,
-				96DE485B167B7B0A0054A10E /* IssueCategory.h */,
-				96DE485C167B7B0A0054A10E /* IssueCategory.m */,
-				96DE485D167B7B0A0054A10E /* IssueStatus.h */,
-				96DE485E167B7B0A0054A10E /* IssueStatus.m */,
-				96DE485F167B7B0A0054A10E /* Project.h */,
-				96DE4860167B7B0A0054A10E /* Project.m */,
-				96DE4861167B7B0A0054A10E /* Settings.h */,
-				96DE4862167B7B0A0054A10E /* Settings.m */,
+				96DE4859167B7B0A0054A10E /* RCIssue.h */,
+				96DE485A167B7B0A0054A10E /* RCIssue.m */,
+				96DE485B167B7B0A0054A10E /* RCIssueCategory.h */,
+				96DE485C167B7B0A0054A10E /* RCIssueCategory.m */,
+				96DE485D167B7B0A0054A10E /* RCIssueStatus.h */,
+				96DE485E167B7B0A0054A10E /* RCIssueStatus.m */,
+				96DE485F167B7B0A0054A10E /* RCProject.h */,
+				96DE4860167B7B0A0054A10E /* RCProject.m */,
+				96DE4861167B7B0A0054A10E /* RCSettings.h */,
+				96DE4862167B7B0A0054A10E /* RCSettings.m */,
 				96DE4863167B7B0A0054A10E /* Settings.plist */,
-				96DE4864167B7B0A0054A10E /* Tracker.h */,
-				96DE4865167B7B0A0054A10E /* Tracker.m */,
-				96DE4866167B7B0A0054A10E /* User.h */,
-				96DE4867167B7B0A0054A10E /* User.m */,
+				96DE4864167B7B0A0054A10E /* RCTracker.h */,
+				96DE4865167B7B0A0054A10E /* RCTracker.m */,
+				96DE4866167B7B0A0054A10E /* RCUser.h */,
+				96DE4867167B7B0A0054A10E /* RCUser.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -311,13 +311,13 @@
 				96A189C71674EE5900CC0396 /* AFXMLRequestOperation.m in Sources */,
 				96A189C81674EE5900CC0396 /* UIImageView+AFNetworking.m in Sources */,
 				96DE484D167B72190054A10E /* NSObject+AutoMagicCoding.m in Sources */,
-				96DE4868167B7B0A0054A10E /* Issue.m in Sources */,
-				96DE4869167B7B0A0054A10E /* IssueCategory.m in Sources */,
-				96DE486A167B7B0A0054A10E /* IssueStatus.m in Sources */,
-				96DE486B167B7B0A0054A10E /* Project.m in Sources */,
-				96DE486C167B7B0A0054A10E /* Settings.m in Sources */,
-				96DE486E167B7B0A0054A10E /* Tracker.m in Sources */,
-				96DE486F167B7B0A0054A10E /* User.m in Sources */,
+				96DE4868167B7B0A0054A10E /* RCIssue.m in Sources */,
+				96DE4869167B7B0A0054A10E /* RCIssueCategory.m in Sources */,
+				96DE486A167B7B0A0054A10E /* RCIssueStatus.m in Sources */,
+				96DE486B167B7B0A0054A10E /* RCProject.m in Sources */,
+				96DE486C167B7B0A0054A10E /* RCSettings.m in Sources */,
+				96DE486E167B7B0A0054A10E /* RCTracker.m in Sources */,
+				96DE486F167B7B0A0054A10E /* RCUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

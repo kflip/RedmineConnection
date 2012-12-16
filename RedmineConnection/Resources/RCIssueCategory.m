@@ -1,14 +1,16 @@
 //
-//  Tracker.m
+//  IssueCategory.m
 //  RedmineConnection
 //
 //  Created by Sebastian Kruschwitz on 14.12.12.
 //  Copyright (c) 2012 Sebastian Kruschwitz. All rights reserved.
 //
 
-#import "Tracker.h"
+#import "RCIssueCategory.h"
+#import "RCProject.h"
+#import "RCUser.h"
 
-@implementation Tracker
+@implementation RCIssueCategory
 
 + (BOOL) AMCEnabled
 {

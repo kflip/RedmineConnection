@@ -8,26 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
-@class IssueCategory;
-@class IssueStatus;
-@class User;
-@class Project;
-@class Tracker;
+@class RCIssueCategory;
+@class RCIssueStatus;
+@class RCUser;
+@class RCProject;
+@class RCTracker;
 
-@interface Issue : NSObject
+@interface RCIssue : NSObject
 
 @property(nonatomic, strong) NSDate *startDate;
 @property(nonatomic, strong) NSNumber *issueID;
-@property(nonatomic, strong) IssueCategory *category;
-@property(nonatomic, strong) User *assignedTo;
+@property(nonatomic, strong) RCIssueCategory *category;
+@property(nonatomic, strong) RCUser *assignedTo;
 @property(nonatomic, strong) NSDate *createdAt;
 @property(nonatomic, strong) NSDate *updatedAt;
-@property(nonatomic, strong) User *author;
+@property(nonatomic, strong) RCUser *author;
 @property(nonatomic, strong) NSString *subject;
 @property(nonatomic, strong) NSString *description;
-@property(nonatomic, strong) Project *project;
-@property(nonatomic, strong) Tracker *tracker;
-@property(nonatomic, strong) IssueStatus *status;
+@property(nonatomic, strong) RCProject *project;
+@property(nonatomic, strong) RCTracker *tracker;
+@property(nonatomic, strong) RCIssueStatus *status;
 
 -(void)postWitherrorHandler:(void (^)(NSError *error))block;
 

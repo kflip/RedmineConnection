@@ -1,13 +1,18 @@
 //
-//  User.h
+//  User.m
 //  RedmineConnection
 //
 //  Created by Sebastian Kruschwitz on 14.12.12.
 //  Copyright (c) 2012 Sebastian Kruschwitz. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "RCUser.h"
 
-@interface User : NSObject
+@implementation RCUser
+
++ (BOOL) AMCEnabled
+{
+    return YES;
+}
 
 @end

@@ -6,19 +6,19 @@
 //  Copyright (c) 2012 Sebastian Kruschwitz. All rights reserved.
 //
 
-#import "Issue.h"
-#import "IssueCategory.h"
-#import "IssueStatus.h"
-#import "User.h"
-#import "Project.h"
-#import "Tracker.h"
+#import "RCIssue.h"
+#import "RCIssueCategory.h"
+#import "RCIssueStatus.h"
+#import "RCUser.h"
+#import "RCProject.h"
+#import "RCTracker.h"
 
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
-#import "Settings.h"
+#import "RCSettings.h"
 
 
-@implementation Issue
+@implementation RCIssue
 
 + (BOOL) AMCEnabled
 {
@@ -26,7 +26,7 @@
 }
 
 -(void)postWitherrorHandler:(void (^)(NSError *error))block {
-    Settings *settings = [Settings sharedInstance];
+    RCSettings *settings = [RCSettings sharedInstance];
     NSString *urlString = [NSString stringWithFormat:@"%@issues.json?key=%@", settings.serverURL, settings.apiKey];
     NSURL *url = [NSURL URLWithString:urlString];
     

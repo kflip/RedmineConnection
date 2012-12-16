@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 Sebastian Kruschwitz. All rights reserved.
 //
 
-#import "Project.h"
-#import "Settings.h"
+#import "RCProject.h"
+#import "RCSettings.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 #import "AFJSONRequestOperation.h"
 
-@implementation Project
+@implementation RCProject
 
 + (BOOL) AMCEnabled
 {
@@ -20,7 +20,7 @@
 }
 
 -(void)postWithErrorHandler:(void (^)(NSError *error))block {
-    Settings *settings = [Settings sharedInstance];
+    RCSettings *settings = [RCSettings sharedInstance];
     NSString *urlString = [NSString stringWithFormat:@"%@projects.json?key=%@", settings.serverURL, settings.apiKey];
     NSURL *url = [NSURL URLWithString:urlString];
     
@@ -46,7 +46,7 @@
 }
 
 + (void)receiveWithLimit:(int)limit offset:(int)offset completion:(void (^)(NSArray *projects, NSError *error))completion {
-    Settings *settings = [Settings sharedInstance];
+    RCSettings *settings = [RCSettings sharedInstance];
     NSString *urlString = [NSString stringWithFormat:@"%@projects.json?key=%@&limit=%i&offset=%i", settings.serverURL, settings.apiKey, limit, offset];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -65,7 +65,7 @@
         for (int i=0; i<[projects count]; i++) {
             NSDictionary *dict = [projects objectAtIndex:i];
             
-            Project *project = [[Project alloc] init];
+            RCProject *project = [[RCProject alloc] init];
             project.createdAt = [dateFormatter dateFromString:[dict valueForKey:@"created_on"]];
             project.updatedAt = [dateFormatter dateFromString:[dict valueForKey:@"updated_on"]];
             project.description = [dict valueForKey:@"description"];

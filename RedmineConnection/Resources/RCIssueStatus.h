@@ -1,5 +1,5 @@
 //
-//  IssueCategory.h
+//  IssueStatus.h
 //  RedmineConnection
 //
 //  Created by Sebastian Kruschwitz on 14.12.12.
@@ -8,15 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class Project;
-@class User;
+@interface RCIssueStatus : NSObject
 
-@interface IssueCategory : NSObject
-
-@property(nonatomic) NSUInteger issueCategoryID;
-@property(nonatomic, strong) Project *project;
+@property(nonatomic, strong) NSNumber *statusID;
 @property(nonatomic, strong) NSString *name;
-@property(nonatomic, strong) User *assignedTo;
-
+@property(nonatomic, strong) NSNumber *isDefault;
+@property(nonatomic, strong) NSNumber *isClosed;
 
 @end

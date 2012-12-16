@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Project : NSObject
+@interface RCProject : NSObject
 
 @property (nonatomic, strong) NSDate *createdAt;
 @property (nonatomic, strong) NSDate *updatedAt;

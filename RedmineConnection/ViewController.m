@@ -7,16 +7,16 @@
 //
 
 #import "ViewController.h"
-#import "Settings.h"
+#import "RCSettings.h"
 #import "NSObject+AutoMagicCoding.h"
 
 #import "AFJSONRequestOperation.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 
-#import "Project.h"
-#import "Issue.h"
-#import "IssueStatus.h"
+#import "RCProject.h"
+#import "RCIssue.h"
+#import "RCIssueStatus.h"
 
 
 @implementation ViewController
@@ -26,13 +26,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    Project *p = [[Project alloc] init];
+    RCProject *p = [[RCProject alloc] init];
     p.projectID = [NSNumber numberWithInt:16];
     
-    IssueStatus *status = [[IssueStatus alloc]init];
+    RCIssueStatus *status = [[RCIssueStatus alloc]init];
     status.statusID = [NSNumber numberWithInt:1];
     
-    Issue *issue = [[Issue alloc] init];
+    RCIssue *issue = [[RCIssue alloc] init];
     issue.subject = @"Test issue subject";
     issue.description = @"Test issue description";
     issue.project = p;
