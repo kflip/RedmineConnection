@@ -1,34 +1,30 @@
 //
-//  Issue.h
+//  RCIssue.h
 //  RedmineConnection
 //
-//  Created by Sebastian Kruschwitz on 14.12.12.
-//  Copyright (c) 2012 Sebastian Kruschwitz. All rights reserved.
+//  Created by Sebastian Kruschwitz on 19.12.12.
+//  Copyright (c) 2012 Gobas. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@class RCIssueCategory;
-@class RCIssueStatus;
-@class RCUser;
-@class RCProject;
-@class RCTracker;
+@class RCIssueCategory, RCIssueStatus, RCProject, RCTracker, RCUser;
 
-@interface RCIssue : NSObject
+@interface RCIssue : NSManagedObject
 
-@property(nonatomic, strong) NSDate *startDate;
-@property(nonatomic, strong) NSNumber *issueID;
-@property(nonatomic, strong) RCIssueCategory *category;
-@property(nonatomic, strong) RCUser *assignedTo;
-@property(nonatomic, strong) NSDate *createdAt;
-@property(nonatomic, strong) NSDate *updatedAt;
-@property(nonatomic, strong) RCUser *author;
-@property(nonatomic, strong) NSString *subject;
-@property(nonatomic, strong) NSString *description;
-@property(nonatomic, strong) RCProject *project;
-@property(nonatomic, strong) RCTracker *tracker;
-@property(nonatomic, strong) RCIssueStatus *status;
-
--(void)postWitherrorHandler:(void (^)(NSError *error))block;
+@property (nonatomic, retain) NSNumber * issueID;
+@property (nonatomic, retain) NSDate * startDate;
+@property (nonatomic, retain) NSNumber * estimatedHours;
+@property (nonatomic, retain) NSDate * createdAt;
+@property (nonatomic, retain) NSDate * updatedAt;
+@property (nonatomic, retain) NSString * subject;
+@property (nonatomic, retain) NSString * descr;
+@property (nonatomic, retain) RCIssueCategory *category;
+@property (nonatomic, retain) RCUser *assignedTo;
+@property (nonatomic, retain) RCUser *author;
+@property (nonatomic, retain) RCProject *project;
+@property (nonatomic, retain) RCTracker *tracker;
+@property (nonatomic, retain) RCIssueStatus *status;
 
 @end

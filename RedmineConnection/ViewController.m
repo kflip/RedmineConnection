@@ -14,8 +14,8 @@
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 
-#import "RCProject.h"
-#import "RCIssue.h"
+#import "RCProject+Additions.h"
+#import "RCIssue+Additions.h"
 #import "RCIssueStatus.h"
 
 
@@ -34,15 +34,19 @@
     
     RCIssue *issue = [[RCIssue alloc] init];
     issue.subject = @"Test issue subject";
-    issue.description = @"Test issue description";
+    issue.descr = @"Test issue description";
     issue.project = p;
     issue.status = status;
+    
         
-    [issue postWitherrorHandler:^(NSError *error) {
+    [issue postWithErrorHandler:^(NSError *error) {
         if (error) {
             NSLog(@"ERROR: %@", error.localizedDescription);
         }
     }];
+    
+    
+    NSLog(@"Issue as Dict: %@", [issue dictionaryRepresentation]);
     
 }
 

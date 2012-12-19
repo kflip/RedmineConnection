@@ -1,19 +1,13 @@
 //
-//  RCTracker.m
+//  RCIssueCategory+Additions.h
 //  RedmineConnection
 //
 //  Created by Sebastian Kruschwitz on 19.12.12.
 //  Copyright (c) 2012 Gobas. All rights reserved.
 //
 
-#import "RCTracker.h"
-#import "RCIssue.h"
+#import "RCIssueCategory.h"
 
-
-@implementation RCTracker
-
-@dynamic trackerID;
-@dynamic name;
-@dynamic issues;
+@interface RCIssueCategory (Additions)
 
 @end

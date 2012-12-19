@@ -1,18 +1,25 @@
 //
-//  User.m
+//  RCUser.m
 //  RedmineConnection
 //
-//  Created by Sebastian Kruschwitz on 14.12.12.
-//  Copyright (c) 2012 Sebastian Kruschwitz. All rights reserved.
+//  Created by Sebastian Kruschwitz on 19.12.12.
+//  Copyright (c) 2012 Gobas. All rights reserved.
 //
 
 #import "RCUser.h"
+#import "RCIssue.h"
+#import "RCIssueCategory.h"
+
 
 @implementation RCUser
 
-+ (BOOL) AMCEnabled
-{
-    return YES;
-}
+@dynamic userID;
+@dynamic login;
+@dynamic firstname;
+@dynamic lastname;
+@dynamic mail;
+@dynamic authorIssues;
+@dynamic assignedIssues;
+@dynamic assignedCategories;
 
 @end

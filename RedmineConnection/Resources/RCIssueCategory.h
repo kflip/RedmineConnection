@@ -1,22 +1,30 @@
 //
-//  IssueCategory.h
+//  RCIssueCategory.h
 //  RedmineConnection
 //
-//  Created by Sebastian Kruschwitz on 14.12.12.
-//  Copyright (c) 2012 Sebastian Kruschwitz. All rights reserved.
+//  Created by Sebastian Kruschwitz on 19.12.12.
+//  Copyright (c) 2012 Gobas. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@class RCProject;
-@class RCUser;
+@class RCIssue, RCProject, RCUser;
 
-@interface RCIssueCategory : NSObject
+@interface RCIssueCategory : NSManagedObject
 
-@property(nonatomic) NSUInteger issueCategoryID;
-@property(nonatomic, strong) RCProject *project;
-@property(nonatomic, strong) NSString *name;
-@property(nonatomic, strong) RCUser *assignedTo;
+@property (nonatomic, retain) NSNumber * issueCategoryID;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) RCProject *project;
+@property (nonatomic, retain) RCUser *assignedTo;
+@property (nonatomic, retain) NSSet *issues;
+@end
 
+@interface RCIssueCategory (CoreDataGeneratedAccessors)
+
+- (void)addIssuesObject:(RCIssue *)value;
+- (void)removeIssuesObject:(RCIssue *)value;
+- (void)addIssues:(NSSet *)values;
+- (void)removeIssues:(NSSet *)values;
 
 @end

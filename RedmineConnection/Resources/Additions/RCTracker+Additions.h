@@ -1,5 +1,5 @@
 //
-//  RCTracker.m
+//  RCTracker+Additions.h
 //  RedmineConnection
 //
 //  Created by Sebastian Kruschwitz on 19.12.12.
@@ -7,13 +7,7 @@
 //
 
 #import "RCTracker.h"
-#import "RCIssue.h"
 
-
-@implementation RCTracker
-
-@dynamic trackerID;
-@dynamic name;
-@dynamic issues;
+@interface RCTracker (Additions)
 
 @end

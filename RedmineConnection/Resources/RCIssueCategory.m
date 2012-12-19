@@ -1,20 +1,23 @@
 //
-//  IssueCategory.m
+//  RCIssueCategory.m
 //  RedmineConnection
 //
-//  Created by Sebastian Kruschwitz on 14.12.12.
-//  Copyright (c) 2012 Sebastian Kruschwitz. All rights reserved.
+//  Created by Sebastian Kruschwitz on 19.12.12.
+//  Copyright (c) 2012 Gobas. All rights reserved.
 //
 
 #import "RCIssueCategory.h"
+#import "RCIssue.h"
 #import "RCProject.h"
 #import "RCUser.h"
 
+
 @implementation RCIssueCategory
 
-+ (BOOL) AMCEnabled
-{
-    return YES;
-}
+@dynamic issueCategoryID;
+@dynamic name;
+@dynamic project;
+@dynamic assignedTo;
+@dynamic issues;
 
 @end

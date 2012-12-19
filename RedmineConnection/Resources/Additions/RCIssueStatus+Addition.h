@@ -1,5 +1,5 @@
 //
-//  RCIssueStatus.m
+//  RCIssueStatus+Addition.h
 //  RedmineConnection
 //
 //  Created by Sebastian Kruschwitz on 19.12.12.
@@ -7,15 +7,7 @@
 //
 
 #import "RCIssueStatus.h"
-#import "RCIssue.h"
 
-
-@implementation RCIssueStatus
-
-@dynamic statusID;
-@dynamic name;
-@dynamic isDefault;
-@dynamic isClosed;
-@dynamic issues;
+@interface RCIssueStatus (Addition)
 
 @end

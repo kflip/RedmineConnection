@@ -1,18 +1,30 @@
 //
-//  IssueStatus.h
+//  RCIssueStatus.h
 //  RedmineConnection
 //
-//  Created by Sebastian Kruschwitz on 14.12.12.
-//  Copyright (c) 2012 Sebastian Kruschwitz. All rights reserved.
+//  Created by Sebastian Kruschwitz on 19.12.12.
+//  Copyright (c) 2012 Gobas. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface RCIssueStatus : NSObject
+@class RCIssue;
 
-@property(nonatomic, strong) NSNumber *statusID;
-@property(nonatomic, strong) NSString *name;
-@property(nonatomic, strong) NSNumber *isDefault;
-@property(nonatomic, strong) NSNumber *isClosed;
+@interface RCIssueStatus : NSManagedObject
+
+@property (nonatomic, retain) NSNumber * statusID;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * isDefault;
+@property (nonatomic, retain) NSNumber * isClosed;
+@property (nonatomic, retain) NSSet *issues;
+@end
+
+@interface RCIssueStatus (CoreDataGeneratedAccessors)
+
+- (void)addIssuesObject:(RCIssue *)value;
+- (void)removeIssuesObject:(RCIssue *)value;
+- (void)addIssues:(NSSet *)values;
+- (void)removeIssues:(NSSet *)values;
 
 @end

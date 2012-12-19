@@ -30,7 +30,7 @@
 }
 
 -(void)initPlist {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"RCSettings" ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
         
     self.apiKey = [dict valueForKey:@"APIKey"];

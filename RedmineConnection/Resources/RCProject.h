@@ -1,24 +1,38 @@
 //
-//  Project.h
+//  RCProject.h
 //  RedmineConnection
 //
-//  Created by Sebastian Kruschwitz on 09.12.12.
-//  Copyright (c) 2012 Sebastian Kruschwitz. All rights reserved.
+//  Created by Sebastian Kruschwitz on 19.12.12.
+//  Copyright (c) 2012 Gobas. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface RCProject : NSObject
+@class RCIssue, RCIssueCategory;
 
-@property (nonatomic, strong) NSDate *createdAt;
-@property (nonatomic, strong) NSDate *updatedAt;
-@property (nonatomic, strong) NSString *description;
-@property (nonatomic, strong) NSNumber *projectID;
-@property (nonatomic, strong) NSString *identifier;
-@property (nonatomic, strong) NSString *name;
+@interface RCProject : NSManagedObject
 
-- (void)postWithErrorHandler:(void (^)(NSError *error))block;
+@property (nonatomic, retain) NSNumber * projectID;
+@property (nonatomic, retain) NSDate * createdAt;
+@property (nonatomic, retain) NSDate * updatedAt;
+@property (nonatomic, retain) NSString * descr;
+@property (nonatomic, retain) NSString * identifier;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSSet *issues;
+@property (nonatomic, retain) NSSet *issueCategories;
+@end
 
-+ (void)receiveWithLimit:(int)limit offset:(int)offset completion:(void (^)(NSArray *projects, NSError *error))completion;
+@interface RCProject (CoreDataGeneratedAccessors)
+
+- (void)addIssuesObject:(RCIssue *)value;
+- (void)removeIssuesObject:(RCIssue *)value;
+- (void)addIssues:(NSSet *)values;
+- (void)removeIssues:(NSSet *)values;
+
+- (void)addIssueCategoriesObject:(RCIssueCategory *)value;
+- (void)removeIssueCategoriesObject:(RCIssueCategory *)value;
+- (void)addIssueCategories:(NSSet *)values;
+- (void)removeIssueCategories:(NSSet *)values;
 
 @end

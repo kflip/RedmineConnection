@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C3006" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="RCIssue" representedClassName="RCIssue" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="estimatedHours" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="issueID" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="assignedTo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RCUser" inverseName="assignedIssues" inverseEntity="RCUser" syncable="YES"/>
+        <relationship name="author" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RCUser" inverseName="authorIssues" inverseEntity="RCUser" syncable="YES"/>
+        <relationship name="category" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RCIssueCategory" inverseName="issues" inverseEntity="RCIssueCategory" syncable="YES"/>
+        <relationship name="project" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RCProject" inverseName="issues" inverseEntity="RCProject" syncable="YES"/>
+        <relationship name="status" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RCIssueStatus" inverseName="issues" inverseEntity="RCIssueStatus" syncable="YES"/>
+        <relationship name="tracker" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RCTracker" inverseName="issues" inverseEntity="RCTracker" syncable="YES"/>
+    </entity>
+    <entity name="RCIssueCategory" representedClassName="RCIssueCategory" syncable="YES">
+        <attribute name="issueCategoryID" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="assignedTo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RCUser" inverseName="assignedCategories" inverseEntity="RCUser" syncable="YES"/>
+        <relationship name="issues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCIssue" inverseName="category" inverseEntity="RCIssue" syncable="YES"/>
+        <relationship name="project" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RCProject" inverseName="issueCategories" inverseEntity="RCProject" syncable="YES"/>
+    </entity>
+    <entity name="RCIssueStatus" representedClassName="RCIssueStatus" syncable="YES">
+        <attribute name="isClosed" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="isDefault" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="statusID" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="issues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCIssue" inverseName="status" inverseEntity="RCIssue" syncable="YES"/>
+    </entity>
+    <entity name="RCProject" representedClassName="RCProject" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="projectID" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="issueCategories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCIssueCategory" inverseName="project" inverseEntity="RCIssueCategory" syncable="YES"/>
+        <relationship name="issues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCIssue" inverseName="project" inverseEntity="RCIssue" syncable="YES"/>
+    </entity>
+    <entity name="RCTracker" representedClassName="RCTracker" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackerID" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="issues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCIssue" inverseName="tracker" inverseEntity="RCIssue" syncable="YES"/>
+    </entity>
+    <entity name="RCUser" representedClassName="RCUser" syncable="YES">
+        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="assignedCategories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCIssueCategory" inverseName="assignedTo" inverseEntity="RCIssueCategory" syncable="YES"/>
+        <relationship name="assignedIssues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCIssue" inverseName="assignedTo" inverseEntity="RCIssue" syncable="YES"/>
+        <relationship name="authorIssues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCIssue" inverseName="author" inverseEntity="RCIssue" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="RCIssue" positionX="160" positionY="192" width="128" height="240"/>
+        <element name="RCIssueCategory" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="RCIssueStatus" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="RCProject" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="RCTracker" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="RCUser" positionX="160" positionY="192" width="128" height="165"/>
+    </elements>
+</model>
