@@ -10,4 +10,6 @@
 
 @interface RCUser (Additions)
 
++(void)userWithID:(int)ID completion:(void (^)(RCUser *user, NSError *error))completion;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "RCProject+Additions.h"
 #import "RCIssue+Additions.h"
+#import "RCUser+Additions.h"
 
 #import "RCSettings.h"
 #import "AFHTTPClient.h"
@@ -40,7 +41,7 @@
         for (int i=0; i<[projects count]; i++) {
             NSDictionary *dict = [projects objectAtIndex:i];
             
-            RCProject *project = [[RCProject alloc] init];
+            RCProject *project = [RCProject MR_createEntity]; //[[RCProject alloc] init];
             project.createdAt = [dateFormatter dateFromString:[dict valueForKey:@"created_on"]];
             project.updatedAt = [dateFormatter dateFromString:[dict valueForKey:@"updated_on"]];
             project.descr = [dict valueForKey:@"description"];
@@ -56,7 +57,6 @@
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         completion(nil, error);
     }];
-    
     
     [operation start];
 }
@@ -87,6 +87,7 @@
     [operation start];
 }
 
+//!!!: Nested objects not loaded
 - (void)issuesWithLimit:(int)limit offset:(int)offset completion:(void(^)(NSArray *issues, NSError *error))completion {
     RCSettings *settings = [RCSettings sharedInstance];
     NSString *urlString = [NSString stringWithFormat:@"%@projects/%i/issues.json?key=%@&limit=%i&offset=%i", settings.serverURL, [self.projectID intValue], settings.apiKey, limit, offset];
@@ -105,19 +106,20 @@
         for (int i=0; i < [issues count]; i++) {
             NSDictionary *dict = [issues objectAtIndex:i];
             
-            RCIssue *issue = [[RCIssue alloc] init];
+            RCIssue *issue = [RCIssue MR_createEntity]; //[[RCIssue alloc] init];
             issue.startDate = [dateFormatter dateFromString:[dict valueForKey:@"start_date"]];
             issue.estimatedHours = @([[dict valueForKey:@"estimated_hours"] intValue]);
             issue.createdAt = [dateFormatter dateFromString:[dict valueForKey:@"created_on"]];
             issue.updatedAt = [dateFormatter dateFromString:[dict valueForKey:@"updated_on"]];
+            issue.subject = [dict valueForKey:@"subject"];
+            issue.issueID = [dict valueForKey:@"id"];
+            issue.descr = [dict valueForKey:@"description"];
+
+            issue.project = self;
+            
             //issue.author
             //issue.priority
-            //issue.subject
-            //issue.issueID
-            //issue.project
             //issue.tracker
-            //issue.dueDate
-            //issue.description
             //issue.status
             
             [result addObject:issue];

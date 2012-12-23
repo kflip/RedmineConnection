@@ -8,12 +8,6 @@
 
 #import "RCSettings.h"
 
-@interface RCSettings ()
-
-
-
-@end
-
 
 @implementation RCSettings
 
@@ -23,10 +17,14 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[RCSettings alloc] init];
-        
+                
         [sharedInstance initPlist];
     });
     return sharedInstance;
+}
+
+-(void)initCoreDataStack {
+    [MagicalRecord setupCoreDataStackWithInMemoryStore];
 }
 
 -(void)initPlist {
@@ -44,6 +42,10 @@
     }
     
     return _serverURL;
+}
+
+-(void)dealloc {
+    [MagicalRecord cleanUp];
 }
 
 @end

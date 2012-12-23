@@ -16,7 +16,8 @@
 
 #import "RCProject+Additions.h"
 #import "RCIssue+Additions.h"
-#import "RCIssueStatus.h"
+#import "RCIssueStatus+Addition.h"
+#import "RCUser+Additions.h"
 
 
 @implementation ViewController
@@ -26,27 +27,34 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    RCProject *p = [[RCProject alloc] init];
+    [[RCSettings sharedInstance] initCoreDataStack];
+    
+    RCProject *p = [RCProject MR_createEntity]; //[[RCProject alloc] init];
     p.projectID = [NSNumber numberWithInt:16];
     
-    RCIssueStatus *status = [[RCIssueStatus alloc]init];
+    RCIssueStatus *status = [RCIssueStatus MR_createEntity]; //[[RCIssueStatus alloc]init];
     status.statusID = [NSNumber numberWithInt:1];
     
-    RCIssue *issue = [[RCIssue alloc] init];
+    RCIssue *issue = [RCIssue MR_createEntity]; //[[RCIssue alloc] init];
     issue.subject = @"Test issue subject";
     issue.descr = @"Test issue description";
     issue.project = p;
     issue.status = status;
     
-        
+    /*
     [issue postWithErrorHandler:^(NSError *error) {
         if (error) {
             NSLog(@"ERROR: %@", error.localizedDescription);
         }
     }];
+    */
     
+    /*
+    [RCProject projectsWithLimit:25 offset:0 completion:^(NSArray *projects, NSError *error) {
+        NSLog(@"COMPLETION: %@", projects);
+    }];
+     */
     
-    NSLog(@"Issue as Dict: %@", [issue dictionaryRepresentation]);
     
 }
 

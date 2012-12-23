@@ -18,4 +18,6 @@
 
 + (RCSettings*)sharedInstance;
 
+-(void)initCoreDataStack;
+
 @end
